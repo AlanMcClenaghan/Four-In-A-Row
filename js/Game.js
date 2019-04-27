@@ -6,19 +6,32 @@ class Game {
   }
 
   /** 
+   * Returns active player.
+   * @return  {Object}    player - The active player.
+   */
+  get activePlayer() {
+    return this.players.find(player => player.active);
+  }
+
+  /** 
    * Creates two player objects
    * @return  {Array}    An array of two Player objects.
    */
-
   createPlayer() {
     const players = [
-      new Player('Player 1', 'yellow', 1, true),
-      new Player('Player 2', 'red', 2)
+      new Player('Player 1', 1, 'yellow', true),
+      new Player('Player 2', 2, 'red')
     ]
     return players;
   }
 
+  /** 
+   * Initializes game. 
+   */
   startGame() {
-    alert('clicked in Game object');
+    this.board.drawHTMLBoard();
+    this.activePlayer.activeToken.drawHTMLToken();
+    this.ready = true;
   }
+
 }

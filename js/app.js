@@ -15,6 +15,6 @@ document.getElementById('begin-game').addEventListener('click', function () {
  * Listen for keyboard presses
  */
 document.addEventListener('keydown', function (event) {
-  console.log(event.key); //outputs a string naming the pressed key 
+  game.handleKeydown(event);
 });
 

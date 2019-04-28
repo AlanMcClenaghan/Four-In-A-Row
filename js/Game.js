@@ -34,4 +34,20 @@ class Game {
     this.ready = true;
   }
 
+  /**
+   * Branches code, depending on what key player presses
+   * @param   {Object}    e - Keydown event object
+   */
+
+  handleKeydown(event) {
+    if (this.ready) {
+      if (event.key === 'ArrowLeft') {
+        // Move Left
+      } else if (event.key === 'ArrowRight') {
+        // Move Right
+      } else if (event.key === 'ArrowDown') {
+        // Drop token
+      }
+    }
+  }
 }

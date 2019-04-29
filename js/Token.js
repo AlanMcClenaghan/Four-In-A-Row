@@ -6,15 +6,15 @@ class Token {
     this.columnLocation = 0;
   }
 
-  /** 
+  /**
    * Gets associated htmlToken.
    * @return  {element}   HTML element associated with token object.
    */
   get htmlToken() {
-    return document.getElementById(this.id);;
+    return document.getElementById(this.id);
   }
 
-  /** 
+  /**
    * Gets left offset of html element.
    * @return  {number}   Left offset of token object's htmlToken.
    */
@@ -22,18 +22,18 @@ class Token {
     return this.htmlToken.offsetLeft;
   }
 
-  /** 
+  /**
    * Draws new HTML token.
    */
   drawHTMLToken() {
-    const token = document.createElement('div');
-    document.getElementById('game-board-underlay').appendChild(token);
-    token.setAttribute('id', this.id);
-    token.setAttribute('class', 'token');
+    const token = document.createElement("div");
+    document.getElementById("game-board-underlay").appendChild(token);
+    token.setAttribute("id", this.id);
+    token.setAttribute("class", "token");
     token.style.backgroundColor = this.owner.color;
   }
 
-  /** 
+  /**
    * Moves html token one column to left.
    */
   moveLeft() {
@@ -43,7 +43,7 @@ class Token {
     }
   }
 
-  /** 
+  /**
    * Moves html token one column to right.
    * @param   {number}    columns - number of columns in the game board
    */
@@ -54,15 +54,20 @@ class Token {
     }
   }
 
-  /** 
+  /**
    * Drops html token into targeted board space.
    * @param   {Object}   target - Targeted space for dropped token.
    * @param   {function} reset  - The reset function to call after the drop animation has completed.
    */
   drop(target, reset) {
     this.dropped = true;
-    $(this.htmlToken).animate({
-      top: (target.y * target.diameter)
-    }, 750, 'easeOutBounce', reset);
+    $(this.htmlToken).animate(
+      {
+        top: target.y * target.diameter
+      },
+      750,
+      "easeOutBounce",
+      reset
+    );
   }
 }

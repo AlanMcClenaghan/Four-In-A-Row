@@ -16,10 +16,10 @@ class Player {
   }
 
   /**
-    * Creates token objects for player
-    * @param   {integer}   num - Number of token objects to be created
-    * @return  {array}     tokens - an array of new token objects
-    */
+   * Creates token objects for player
+   * @param   {integer}   num - Number of token objects to be created
+   * @return  {array}     tokens - an array of new token objects
+   */
   createTokens(num) {
     const tokens = [];
 
@@ -31,4 +31,11 @@ class Player {
     return tokens;
   }
 
+  /**
+   * Check if a player has any undropped tokens left
+   * @return {Boolean}
+   */
+  checkTokens() {
+    return this.unusedTokens.length == 0 ? false : true;
+  }
 }

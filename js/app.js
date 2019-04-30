@@ -1,20 +1,25 @@
 const game = new Game();
+game.startGame();
 
-/** 
+// Refactored so game begins again automatically with start button and restart button reloaded the page.
+document.getElementById("begin-game").addEventListener("click", function() {
+  window.location.reload();
+});
+
+/**
  * Listens for click on `#begin-game` and calls startGame() on game object
  */
 
-document.getElementById('begin-game').addEventListener('click', function () {
-  game.startGame();
+// document.getElementById("begin-game").addEventListener("click", function() {
+//   game.startGame();
 
-  this.style.display = 'none';
-  document.getElementById('play-area').style.opacity = '1';
-});
+//   this.style.display = "none";
+//   document.getElementById("play-area").style.opacity = "1";
+// });
 
-/** 
+/**
  * Listen for keyboard presses
  */
-document.addEventListener('keydown', function (event) {
+document.addEventListener("keydown", function(event) {
   game.handleKeydown(event);
 });
-

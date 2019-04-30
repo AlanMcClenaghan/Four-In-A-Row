@@ -160,8 +160,11 @@ class Game {
    */
   gameOver(message) {
     const gameOver = document.getElementById("game-over");
+    const beginGame = document.getElementById("begin-game");
     gameOver.style.display = "block";
+    beginGame.style.display = "block";
     gameOver.textContent = message;
+    beginGame.textContent = "Restart";
   }
 
   /**
